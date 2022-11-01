@@ -11,8 +11,8 @@
     ?>
            
         
-        <a href="/admin/propiedades/crear.php" class="boton boton-verde">Nueva Propiedad</a>
-        <a href="/admin/vendedores/crear.php" class="boton boton-verde">Nuevo Vendedor/a</a>
+        <a href="/public/propiedades/crear" class="boton boton-verde">Nueva Propiedad</a>
+        <a href="/public/vendedores/crear.php" class="boton boton-verde">Nuevo Vendedor/a</a>
 
 
         <h2>Propiedades</h2>
