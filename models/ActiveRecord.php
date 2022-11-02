@@ -59,7 +59,7 @@ class ActiveRecord {
              // Mensaje de exito o error
              if ($resultado){
               // Redireccionar al usuario. el exceso de uso puede provocar loop de redirecciones
-             header('Location: /admin?resultado=1');
+             header('Location: /public/admin?resultado=1');
      }
  }
  
@@ -81,7 +81,7 @@ class ActiveRecord {
  
          if ($resultado){
              // Redireccionar al usuario. el exceso de uso puede provocar loop de redirecciones
-             header('Location: /admin?resultado=2');
+             header('Location: /public/admin?resultado=2');
      }
  }
  
@@ -93,7 +93,7 @@ class ActiveRecord {
  
          if($resultado){
              $this->borrarImagen();
-             header('location: /admin?resultado=3'); // Si hay un resultado se redireciona al mensaje 3
+             header('location: /public/admin?resultado=3'); // Si hay un resultado se redireciona al mensaje 3
          }
      }
  

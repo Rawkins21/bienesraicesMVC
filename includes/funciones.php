@@ -2,7 +2,7 @@
 
 define('TEMPLATES_URL', __DIR__ . '/templates'); // DIR trae la ubicacion especifica del directorio
 define('FUNCIONES_URL', __DIR__ . '/funciones.php');
-define('CARPETA_IMAGENES', __DIR__ . '../../imagenes/');
+define('CARPETA_IMAGENES', $_SERVER['DOCUMENT_ROOT'] . '/imagenes');
 
 
 function incluirTemplate( string $nombre, bool $inicio = false ){ // $inicio = false se asigna por defecto si la clase inicio no esta presente, agrega la clase inicio a la pagina si esta presente
