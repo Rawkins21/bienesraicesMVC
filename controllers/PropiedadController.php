@@ -116,27 +116,21 @@ class PropiedadController{
         'vendedores' => $vendedores
     ]);
 }
-    public static function eliminar(){
-        // Borrar Publicacion
-        if($_SERVER['REQUEST_METHOD' === 'POST']){
-            if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    public static function eliminar() {
+        if($_SERVER['REQUEST_METHOD'] === "POST") {
+            // Validar ID
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
 
-                // Validar id
-                $id = $_POST['id'];
-                $id = filter_var($id, FILTER_VALIDATE_INT);
-            
-                if($id){
-            
-                    $tipo = $_POST['tipo'];
-            
-                    if(validarTipoContenido($tipo)){
-                          // Obtener los datos de la propiedad
-                          $propiedad = Propiedad::find($id);
-                          $propiedad->eliminar();
-                        }
-                    }
+            if($id) {
+                $tipo = $_POST["tipo"];
+
+                if(validarTipoContenido($tipo)) {
+                    // Compara lo que vamos a eliminar
+                    $propiedad = Propiedad::find($id);
+                    $propiedad->eliminar();                    
                 }
             }
         }
     }
-
+}
