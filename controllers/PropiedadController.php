@@ -116,7 +116,7 @@ class PropiedadController{
         'vendedores' => $vendedores
     ]);
 }
-    public function eliminar(){
+    public static function eliminar(){
         // Borrar Publicacion
         if($_SERVER['REQUEST_METHOD' === 'POST']){
             if($_SERVER['REQUEST_METHOD'] === 'POST'){
