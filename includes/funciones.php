@@ -61,3 +61,15 @@ function mostrarNotificacion($codigo){
     }
     return $mensaje;
 }
+
+function validarORedireccionar(string $url){
+    // Validar la URL por ID valido
+ $id = $_GET['id'];
+ $id = filter_var($id, FILTER_VALIDATE_INT); //Validar la variable id con INT
+
+  if(!$id){ // validacion para evitar problemas de capa8 con la url
+     header("Location: ${url}");
+  }
+
+  return $id;
+}

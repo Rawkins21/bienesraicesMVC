@@ -11,7 +11,7 @@
                 <input type="file" id="imagen" accept="image/jpeg, image/png" name="propiedad[imagen]"> <!--//accept especifica los formatos que puede aceptar -->
 
                 <?php if($propiedad->imagen){ ?>
-                     <img src="/imagenes/<?php echo$propiedad->imagen; ?>" class="imagen-small">
+                     <img src="/public/imagenes/<?php echo$propiedad->imagen; ?>" class="imagen-small">
 
                 <?php } ?>
 
