@@ -2,9 +2,17 @@
 
 namespace Controllers;
 
+use MVC\Router;
+use Model\Vendedor;
+
 class VendedorController{
-    public static function crear(){
-        echo "crear vendedor";
+    public static function crear(Router $router){
+
+        $errores = Vendedor::getErrores();
+
+        $router-> render('vendedores/crear',[
+            'errores' => $errores
+        ]);
     }
 
     public static function actualizar(){
