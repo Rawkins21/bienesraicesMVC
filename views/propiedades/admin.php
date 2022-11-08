@@ -75,7 +75,7 @@
                     <td><?php echo $vendedor->nombre . " " . $vendedor->apellido; ?> </td>
                     <td><?php echo $vendedor->telefono; ?> </td>
                     <td><?php echo $vendedor->email; ?> </td>
-                    <td><img src="/imagenes/<?php echo $vendedor->imagen; ?>" class="imagen-tabla"></td>
+                    <td><img src="/public/imagenes/<?php echo $vendedor->imagen; ?>" class="imagen-tabla"></td>
 
 
 
