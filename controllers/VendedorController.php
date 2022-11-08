@@ -10,8 +10,11 @@ class VendedorController{
 
         $errores = Vendedor::getErrores();
 
+        $vendedor = new Vendedor;
+
         $router-> render('vendedores/crear',[
-            'errores' => $errores
+            'errores' => $errores,
+            'vendedor'=> $vendedor
         ]);
     }
 
