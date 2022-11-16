@@ -4,12 +4,13 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Vendedor;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class VendedorController{
     public static function crear(Router $router){
 
         $errores = Vendedor::getErrores();
-
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
             $vendedor = new Vendedor($_POST['vendedor']);
@@ -43,6 +44,7 @@ class VendedorController{
              // Guarda en la base de datos
              $vendedor->crear();
         }
+    }
 
         $vendedor = new Vendedor;
 
@@ -52,8 +54,12 @@ class VendedorController{
         ]);
     }
 
-    public static function actualizar(){
-        echo "actualizar vendedor";
+    public static function actualizar(Router $router){
+
+        
+        $router->render('vendedores/actualizar', [
+
+        ]);
     }
 
     public static function borrar(){
