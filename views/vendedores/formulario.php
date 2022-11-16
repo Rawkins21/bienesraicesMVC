@@ -27,7 +27,7 @@
                 <input type="file" id="imagen" accept="image/jpeg, image/png" name="vendedor[imagen]"> <!--//accept especifica los formatos que puede aceptar -->
 
                 <?php if($vendedor->imagen){ ?>
-                     <img src="/imagenes/<?php echo$vendedor->imagen; ?>" class="imagen-small">
+                     <img src="/public/imagenes/<?php echo$vendedor->imagen; ?>" class="imagen-small">
 
                 <?php } ?>
 
