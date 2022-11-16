@@ -66,33 +66,35 @@ class VendedorController{
             if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
-                // Asignar los atributos
-                $args = $_POST['propiedad'];
+                // Asignar los valores
+                $args = $_POST['vendedor'];
             
                 $vendedor->sincronizar($args);
             
                 // Validacion
-             $errores = $vendedor->validar();
+                $errores = $vendedor->validar();
             
-                // Subida de archivos
-                    // Generar un nombre unico y su extension
+                 // Generar un nombre unico y su extension
                  $nombreImagen = md5( uniqid(rand(), true)) .  ".jpg";
             
-                if($_FILES['propiedad']['tmp_name']['imagen']){
-                $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800,600);
-                $vendedor->setImagen($nombreImagen);
-              }
+                 // Setear la imagen
+                 // Realiza un resize a la imagen con InterventionImage
+                 if($_FILES['vendedor']['tmp_name']['imagen']){
+                     $image = Image::make($_FILES['vendedor']['tmp_name']['imagen'])->fit(800,600);
+                     $vendedor->setImagen($nombreImagen);
+                 }
+             
+                 if(empty($errores)){
+                  // Almacenar la imagen
+                if($_FILES['vendedor']['tmp_name']['imagen']) {
+                    $image->save(CARPETA_IMAGENES. $nombreImagen);
+                }
             
-             //Revisar que el arreglo de $errores este vacio
-             if(empty($errores)){
-                 // Almacenar la imagen
-                    if($_FILES['propiedad']['tmp_name']['imagen']) {
-                     $image->save(CARPETA_IMAGENES . $nombreImagen);
-             }
-                $vendedor->guardar();
-            
-             }
-             }
+                
+                 // Guarda en la base de datos
+                 $vendedor->guardar();
+            }
+            }
 
         $router->render('vendedores/actualizar', [
             'errores' => $errores,

@@ -11,8 +11,8 @@
         
         
             
-        <form class="formulario" method="POST"  enctype="multipart/form-data" action="/vendedores/actualizar">
-            <?php include 'formulario.php' ?>
+        <form class="formulario" method="POST"  enctype="multipart/form-data">
+         <?php include __DIR__ . '/formulario.php' ?>
        
             <input type="submit" value="Guardar Cambios" class="boton boton-verde">
         </form>
