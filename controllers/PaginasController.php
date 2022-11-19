@@ -24,8 +24,10 @@ class PaginasController{
 
     }
 
-    public static function propiedades(){
-        echo 'desde propiedades';
+    public static function propiedades(Router $router){
+        $router-> render('/paginas/propiedades',[
+            
+        ]);
         
     }
 
