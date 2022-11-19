@@ -29,7 +29,7 @@
      <header class="header <?php echo $inicio ? 'inicio' : '' ?>"> <!-- //<?php echo $inicio ? 'inicio' : '' ?>" actua como if con la variable $inicio del index haciendo que inicio solo se active si es llamado-->
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/">
+                <a href="/public">
                     <img src="../build/img/logo.svg" width="300" height="49.38" alt="logotipo de bienes raices">
                 </a>
 
