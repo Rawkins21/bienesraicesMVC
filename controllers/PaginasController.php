@@ -47,8 +47,9 @@ class PaginasController{
         
     }
 
-    public static function blog(){
-        echo 'desde blog';
+    public static function blog(Router $router){
+        
+        $router->render('/paginas/blog');
         
     }
 
