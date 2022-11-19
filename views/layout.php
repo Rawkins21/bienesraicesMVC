@@ -41,14 +41,14 @@
                 <div class="derecha">
                     <img class="dark-mode-boton" src="../build/img/dark-mode.svg">
                     <nav class="navegacion">
-                        <a href="nosotros.php">Nosotros</a>
-                        <a href="anuncios.php">Anuncios</a>
-                        <a href="blog.php">Blog</a>
-                        <a href="contacto.php">Contacto</a>
-                        <a href="login.php">Iniciar Sesión</a>
+                        <a href="/public/nosotros">Nosotros</a>
+                        <a href="/public/propiedades">Anuncios</a>
+                        <a href="/public/blog">Blog</a>
+                        <a href="/public/contacto">Contacto</a>
+                        <a href="/public/login">Iniciar Sesión</a>
 
                         <?php if($auth): ?>
-                        <a href="cerrar-sesion.php">Cerrar Sesión</a>
+                        <a href="/public/cerrar-sesion">Cerrar Sesión</a>
                         <?php endif; ?>
 
 

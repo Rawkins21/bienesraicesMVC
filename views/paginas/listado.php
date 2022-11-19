@@ -3,7 +3,7 @@
             <!--anuncio-->
             <div class="anuncio">
                
-                <img src="/imagenes/<?php echo $propiedad->imagen; ?>" alt="anuncio" loading="lazy">
+                <img src="/public/imagenes/<?php echo $propiedad->imagen; ?>" alt="anuncio" loading="lazy">
               
                 <div class="contenido-anuncio">
                     <h3><?php echo $propiedad->titulo; ?></h3>
