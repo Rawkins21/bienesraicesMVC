@@ -53,8 +53,9 @@ class PaginasController{
         
     }
 
-    public static function entrada(){
-        echo 'desde entrada';
+    public static function entrada(Router $router){
+        
+        $router->render('/paginas/entrada');
         
     }
 
