@@ -9,7 +9,7 @@ use Controllers\PaginasController;
 
 $router = new Router();
 
-
+// Zona Privada
 $router->get('/admin', [PropiedadController::class, 'index']);
 $router->get('/propiedades/crear', [PropiedadController::class, 'crear']);
 $router->post('/propiedades/crear', [PropiedadController::class, 'crear']);
@@ -23,7 +23,19 @@ $router->get('/vendedores/actualizar', [VendedorController::class, 'actualizar']
 $router->post('/vendedores/actualizar', [VendedorController::class, 'actualizar']);
 $router->post('/vendedores/eliminar', [VendedorController::class, 'eliminar']);
 
-$router->get('/', [PaginasController::class, 'crear']);
+// Zona Publica
+$router->get('/', [PaginasController::class, 'index']);
+$router->get('/nosotros', [PaginasController::class, 'nosotros']);
+$router->get('/propiedades', [PaginasController::class, 'propiedades']);
+$router->get('/propiedad', [PaginasController::class, 'propiedad']);
+$router->get('/blog', [PaginasController::class, 'blog']);
+$router->get('/entrada', [PaginasController::class, 'entrada']);
+$router->get('/contacto', [PaginasController::class, 'contacto']);
+$router->get('/contacto', [PaginasController::class, 'contacto']);
+
+
+
+
 
 
 $router->comprobarRutas(); 
