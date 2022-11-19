@@ -17,8 +17,10 @@ class PaginasController{
         ]);
     }
 
-    public static function nosotros(){
-        echo 'desde nosotros';
+    public static function nosotros(Router $router){
+       
+        $router-> render('/paginas/nosotros',[
+        ]);
 
     }
 
