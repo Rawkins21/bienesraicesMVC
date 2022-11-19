@@ -5,6 +5,7 @@ require_once __DIR__ . '/../includes/app.php';
 use MVC\Router;
 use Controllers\PropiedadController;
 use Controllers\VendedorController;
+use Controllers\PaginasController;
 
 $router = new Router();
 
@@ -22,6 +23,7 @@ $router->get('/vendedores/actualizar', [VendedorController::class, 'actualizar']
 $router->post('/vendedores/actualizar', [VendedorController::class, 'actualizar']);
 $router->post('/vendedores/eliminar', [VendedorController::class, 'eliminar']);
 
+$router->get('/', [PaginasController::class, 'crear']);
 
 
 $router->comprobarRutas(); 

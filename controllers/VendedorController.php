@@ -102,7 +102,23 @@ class VendedorController{
         ]);
     }
 
-    public static function borrar(){
-        echo "borrar vendedor";
+    public static function eliminar(){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+           
+
+            // validar el id
+            $id = $_POST['id'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+
+            if($id){
+                //valida el tipo a eliminar
+                $tipo = $_POST['tipo'];
+
+                if(validarTipoContenido($tipo)){
+                    $vendedor = Vendedor::find($id);
+                    $vendedor->eliminar();
+                }
+            }
     }
+}
 }

@@ -80,7 +80,7 @@
 
 
                     <td>
-                        <form method="POST" class="w-100">
+                        <form method="POST" class="w-100" action="../public/vendedores/eliminar">
 
                         <input type="hidden" name="id" value="<?php echo $vendedor->id; ?>">
                         <input type="hidden" name="tipo" value="vendedor">
