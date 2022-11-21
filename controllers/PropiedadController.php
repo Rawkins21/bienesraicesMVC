@@ -90,7 +90,7 @@ class PropiedadController{
             $propiedad->sincronizar($args);
         
             // Validacion
-         $errores = $propiedad->validar();
+            $errores = $propiedad->validar();
         
             // Subida de archivos
                 // Generar un nombre unico y su extension
