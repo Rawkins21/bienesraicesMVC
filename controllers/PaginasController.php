@@ -4,7 +4,7 @@ namespace Controllers;
 
 use MVC\Router;
 use Model\Propiedad;
-
+use PHPMailer\PHPMailer\PHPMailer;
 class PaginasController{
     public static function index(Router $router){
         
@@ -62,7 +62,10 @@ class PaginasController{
     public static function contacto(Router $router){
         
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            debuguear($_POST);
+            
+
+            // Crear una instancia de PHPMailer
+            $mail = new PHPMailer();
         }
 
         $router-> render('/paginas/contacto',[
