@@ -16,29 +16,29 @@
         <fieldset>
             <legend>Información Personal</legend>
             <label for="nombre">Nombre</label>
-            <input type="text" placeholder="Tu Nombre" id="nombre" name="contacto [nombre]">
+            <input type="text" placeholder="Tu Nombre" id="nombre" name="contacto [nombre]" required>
 
             <label for="email">E-mail</label>
-            <input type="email" placeholder="Tu Email" id="email"name="contacto [email]">
+            <input type="email" placeholder="Tu Email" id="email"name="contacto [email]" required>
 
             <label for="telefono">Teléfono</label>
             <input type="tel" placeholder="Tu Telefono" id="telefono"name="contacto [telefono]">
 
             <label for="mensaje">Mensaje</label>
-            <textarea name="" id="mensaje" cols="30" rows="0"name="contacto [mensaje]"></textarea>
+            <textarea name="" id="mensaje" cols="30" rows="0"name="contacto [mensaje]" required></textarea>
         </fieldset>
 
         <fieldset>
             <legend>Información sobre Propiedad</legend>
             <label for="opciones">Vende o Compra</label>
-            <select id="opciones" name="contacto [tipo]">
+            <select id="opciones" name="contacto [tipo]" required>
                     <option value="" disabled selected>-Seleccione aquí-</option>
                     <option value="Compra">Compra</option>
                     <option value="Vende">Vende</option>
                 </select>
 
             <label for="presupuesto">Precio o Presupuesto</label>
-            <input type="number" placeholder="Tu Precio o Presupuesto" id="presupuesto" name="contacto [precio]">
+            <input type="number" placeholder="Tu Precio o Presupuesto" id="presupuesto" name="contacto [precio]" required>
 
         </fieldset>
 
@@ -48,10 +48,10 @@
             <p>Como desea ser contactado:</p>
             <div class="forma-contacto">
                 <label for="contactar-telefono">Teléfono</label>
-                <input name="contacto" type="radio" value="telefono" id="contactar-telefono" name="contacto [contacto]">
+                <input name="contacto" type="radio" value="telefono" id="contactar-telefono" name="contacto [contacto]" required>
 
                 <label for="contactar-email">E-mail</label>
-                <input name="contacto" type="radio" value="email" id="contactar-email" name="contacto [precio]">
+                <input name="contacto" type="radio" value="email" id="contactar-email" name="contacto [precio]" required>
             </div>
 
             <p>Si eligió teléfono, elija fecha y hora de contacto</p>
