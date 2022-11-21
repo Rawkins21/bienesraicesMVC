@@ -9,7 +9,10 @@
 
     <h2>Llene el formulario de Contacto</h2>
 
-    <form class="formulario" action="/public/contacto" method="POST">
+    <!-- en imput radio el name tiene que ser el mismo para evitar solapamiento, lo que define lo que se va a enviar al formulario es el value -->
+
+
+    <form class="formulario" method="POST" enctype="multipart/form-data">
         <fieldset>
             <legend>Información Personal</legend>
             <label for="nombre">Nombre</label>
@@ -21,7 +24,7 @@
             <label for="telefono">Teléfono</label>
             <input type="tel" placeholder="Tu Telefono" id="telefono"name="contacto [telefono]">
 
-            <label for="mensaje">Nombre</label>
+            <label for="mensaje">Mensaje</label>
             <textarea name="" id="mensaje" cols="30" rows="0"name="contacto [mensaje]"></textarea>
         </fieldset>
 
@@ -44,7 +47,6 @@
 
             <p>Como desea ser contactado:</p>
             <div class="forma-contacto">
-                <!--en el tipo radio el nombre debe ser identico para evitar solapamiento -->
                 <label for="contactar-telefono">Teléfono</label>
                 <input name="contacto" type="radio" value="telefono" id="contactar-telefono" name="contacto [contacto]">
 
@@ -55,10 +57,10 @@
             <p>Si eligió teléfono, elija fecha y hora de contacto</p>
 
             <label for="fecha">Fecha</label>
-            <input type="date" id="fecha">
+            <input type="date" id="fecha" name="contacto [fecha]">
 
             <label for="hora">Hora</label>
-            <input type="time" id="hora" min="09:00" max="18:00">
+            <input type="time" id="hora" min="09:00" max="18:00" name="contacto [hora]">
         </fieldset>
 
         <input type="submit" value="Enviar" class="boton-verde">
