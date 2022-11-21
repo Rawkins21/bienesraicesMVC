@@ -31,7 +31,7 @@ $router->get('/propiedad', [PaginasController::class, 'propiedad']);
 $router->get('/blog', [PaginasController::class, 'blog']);
 $router->get('/entrada', [PaginasController::class, 'entrada']);
 $router->get('/contacto', [PaginasController::class, 'contacto']);
-$router->get('/contacto', [PaginasController::class, 'contacto']);
+$router->post('/contacto', [PaginasController::class, 'contacto']);
 
 
 
