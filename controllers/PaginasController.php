@@ -5,6 +5,7 @@ namespace Controllers;
 use MVC\Router;
 use Model\Propiedad;
 use PHPMailer\PHPMailer\PHPMailer;
+
 class PaginasController{
     public static function index(Router $router){
         
@@ -61,16 +62,18 @@ class PaginasController{
 
     public static function contacto(Router $router){
         
+        
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             
-
+            $respuestas = $_POST['contacto'];
+        
             // Crear una instancia de PHPMailer
             $mail = new PHPMailer();
 
             // Configurar SMTP
             $mail->isSMTP();
             $mail->Host = 'smtp.mailtrap.io';
-            $mail->SMTPauth = true;
+            $mail->SMTPAuth = true;
             $mail->Username = '31aff57a37243f';
             $mail->Password = 'cc02b86a9dd140';
             $mail->SMTPSecure = 'tls'; // Transport Layer Security
@@ -86,10 +89,26 @@ class PaginasController{
             $mail->CharSet= 'UTF-8';
             
             // Definir el contenido
-            $contenido = '<html> <p>Tienes un nuevo mensaje</p> </html>';
+             $contenido = '<html>';
+             $contenido .= '<p>Tienes un nuevo mensaje</p>'; // .= concatena con la linea anterior
+             $contenido .= '<p>Nombre: ' .  $respuestas['nombre']  . ' </p>'; 
+             $contenido .= '<p>Email: ' .  $respuestas['email']  . ' </p>'; 
+             $contenido .= '<p>Teléfono: ' .  $respuestas['telefono']  . ' </p>'; 
+             $contenido .= '<p>Mensaje: ' .  $respuestas['mensaje']  . ' </p>'; 
+             $contenido .= '<p>Vende o Compra: ' .  $respuestas['tipo']  . ' </p>'; 
+             $contenido .= '<p>Precio o Presupuesto:  $' .  $respuestas['precio']  . ' </p>'; 
+             $contenido .= '<p>Prefiere ser contactado por: ' .  $respuestas['contacto']  . ' </p>'; 
+             $contenido .= '<p>Fecha de Contacto: ' .  $respuestas['fecha']  . ' </p>'; 
+             $contenido .= '<p>Hora de Contacto: ' .  $respuestas['hora']  . ' </p>'; 
+
+
+
+             $contenido .= '</html>';  
+      
 
             $mail->Body = $contenido;
-            $mail->AltBody = 'Esto es texto alternativo sin HTML';
+            $mail->AltBody = 'Esto es texto alternativo sin HTML'; // Para servicios de Email que no soportan HTML
+
 
             // Enviar el email
             if($mail->send()){
