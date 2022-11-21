@@ -66,6 +66,37 @@ class PaginasController{
 
             // Crear una instancia de PHPMailer
             $mail = new PHPMailer();
+
+            // Configurar SMTP
+            $mail->isSMTP();
+            $mail->Host = 'smtp.mailtrap.io';
+            $mail->SMTPauth = true;
+            $mail->Username = '31aff57a37243f';
+            $mail->Password = 'cc02b86a9dd140';
+            $mail->SMTPSecure = 'tls'; // Transport Layer Security
+            $mail->Port = 2525;
+
+            // Configurar el contenido del mail
+            $mail->setFrom('admin@bieneraices.com');
+            $mail->addAddress('admin@bienesraices.com', 'BienesRaices.com');
+            $mail->Subject= 'Tienes un Nuevo Mensaje';
+
+            // Habilitar HTML
+            $mail->isHTML(true);
+            $mail->CharSet= 'UTF-8';
+            
+            // Definir el contenido
+            $contenido = '<html> <p>Tienes un nuevo mensaje</p> </html>';
+
+            $mail->Body = $contenido;
+            $mail->AltBody = 'Esto es texto alternativo sin HTML';
+
+            // Enviar el email
+            if($mail->send()){
+                echo 'mensaje enviado Correctamente';
+            } else {
+                echo 'mensaje no enviado';
+            }
         }
 
         $router-> render('/paginas/contacto',[
