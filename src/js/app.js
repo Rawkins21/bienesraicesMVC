@@ -59,7 +59,7 @@ function mostrarMetodosContacto(e){
 
     if(e.target.value === 'telefono'){
         contactoDiv.innerHTML = `
-        <label for="telefono">Teléfono</label>
+        <label for="telefono">Número telefonico</label>
         <input type="tel" placeholder="Tu Telefono" id="telefono" name="contacto[telefono]">
 
         <p>elija fecha y hora de contacto</p>
