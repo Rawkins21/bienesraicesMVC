@@ -36,6 +36,12 @@ function eventListeners() {
 
     mobileMenu.addEventListener('click', navegacionResponsive);
 
+    // Muestra campos condicionales
+    const metodoContacto = document.querySelectorAll('input[name="contacto[contacto]"]'); // input permite selecionar un atributo
+    metodoContacto.forEach(input => input.addEventListener('click', mostrarMetodosContacto));
+
+   
+   
 }
 
 function navegacionResponsive() {
@@ -46,4 +52,8 @@ function navegacionResponsive() {
     } else {
         navegacion.classList.add('mostrar');
     }
+}
+
+function mostrarMetodosContacto(){
+    console.log('Seleccionando...');
 }
