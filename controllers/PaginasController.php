@@ -88,11 +88,22 @@ class PaginasController{
             $mail->isHTML(true);
             $mail->CharSet= 'UTF-8';
             
+            debuguear($respuestas);
+
             // Definir el contenido
              $contenido = '<html>';
              $contenido .= '<p>Tienes un nuevo mensaje</p>'; // .= concatena con la linea anterior
              $contenido .= '<p>Nombre: ' .  $respuestas['nombre']  . ' </p>'; 
-             $contenido .= '<p>Email: ' .  $respuestas['email']  . ' </p>'; 
+
+            // Enviar de forma condicional algunos campos de email o telefono
+            if($respuestas['contacto'] === 'telefono') {
+            $contenido .= '<p>Eligió ser contactado por teléfono:</p>';
+
+            } else{
+            // es email, agregamos el campo de email
+            $contenido .= '<p>Eligió ser contactado por email:</p>';
+            $contenido .= '<p>Email: ' .  $respuestas['email']  . ' </p>'; 
+            }
              $contenido .= '<p>Teléfono: ' .  $respuestas['telefono']  . ' </p>'; 
              $contenido .= '<p>Mensaje: ' .  $respuestas['mensaje']  . ' </p>'; 
              $contenido .= '<p>Vende o Compra: ' .  $respuestas['tipo']  . ' </p>'; 
@@ -100,7 +111,6 @@ class PaginasController{
              $contenido .= '<p>Prefiere ser contactado por: ' .  $respuestas['contacto']  . ' </p>'; 
              $contenido .= '<p>Fecha de Contacto: ' .  $respuestas['fecha']  . ' </p>'; 
              $contenido .= '<p>Hora de Contacto: ' .  $respuestas['hora']  . ' </p>'; 
-
 
 
              $contenido .= '</html>';  
