@@ -36,7 +36,8 @@ $router->get('/entrada', [PaginasController::class, 'entrada']);
 $router->get('/contacto', [PaginasController::class, 'contacto']);
 $router->post('/contacto', [PaginasController::class, 'contacto']);
 
-
+// Login y autenticacion
+$router->get('/login', [PaginasController::class, 'contacto']);
 
 
 
