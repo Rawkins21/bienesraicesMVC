@@ -8,7 +8,7 @@
 
         <?php endforeach; ?>
 
-        <form method="POST" action="login.php">
+        <form method="POST" class="formulario" action="/public/login">
         <fieldset>
             <legend>Email y Password</legend>
           
